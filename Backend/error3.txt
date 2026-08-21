@@ -1,0 +1,40 @@
+﻿node : file:///C:/Users/vick
+y%20kumar/OneDrive/Desktop/N
+ovexa-Tech/Online%20Job%20Po
+rtal/Backend/routes/applicat
+ionRoutes.js:8
+At line:1 char:1
++ node server.js 2>&1 | 
+Out-File -Encoding utf8 
+error3.txt
++ ~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          
+    : NotSpecified: (file:  
+  ///C:/User...tionRoutes   
+ .js:8:String) [], Remot    
+eException
+    + FullyQualifiedErrorId 
+    : NativeCommandError
+ 
+import { protect } from "../
+middleware/authMiddleware.js
+";
+         ^^^^^^^
+SyntaxError: The requested 
+module '../middleware/authMi
+ddleware.js' does not 
+provide an export named 
+'protect'
+    at #asyncInstantiate (no
+de:internal/modules/esm/modu
+le_job:326:21)
+    at async ModuleJob.run (
+node:internal/modules/esm/mo
+dule_job:429:5)
+    at async node:internal/m
+odules/esm/loader:639:26
+    at async asyncRunEntryPo
+intWithESMLoader (node:inter
+nal/modules/run_main:101:5)
+
+Node.js v24.15.0

@@ -5,15 +5,15 @@ import {
     getJobApplications,
     updateApplicationStatus,
 } from "../controllers/applicationController.js";
-import { protect } from "../middleware/authMiddleware.js";
-import { roleMiddleware } from "../middleware/roleMiddleware.js";
+import authMiddleware from "../middleware/authMiddleware.js";
+import roleMiddleware from "../middleware/roleMiddleware.js";
 
 const router = express.Router();
 
-router.post("/", protect, roleMiddleware("jobSeeker"), applyForJob);
-router.get("/my", protect, roleMiddleware("jobSeeker"), getMyApplications);
+router.post("/", authMiddleware, roleMiddleware("jobSeeker"), applyForJob);
+router.get("/my", authMiddleware, roleMiddleware("jobSeeker"), getMyApplications);
 
-router.get("/:jobId/applications", protect, roleMiddleware("recruiter"), getJobApplications);
-router.put("/:id/status", protect, roleMiddleware("recruiter"), updateApplicationStatus);
+router.get("/:jobId/applications", authMiddleware, roleMiddleware("recruiter"), getJobApplications);
+router.put("/:id/status", authMiddleware, roleMiddleware("recruiter"), updateApplicationStatus);
 
 export default router;
