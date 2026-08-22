@@ -38,21 +38,21 @@ const jobSchema = new mongoose.Schema(
 
         jobType: {
             type: String,
-            enum: ["Full-time", "Part-time", "Intership", "Remote"],
+            enum: ["Full-time", "Part-time", "Internship", "Remote"],
             default: "Full-time",
         },
 
-       postedBy: {
-        type: mongoose.Schema.Types.ObjectId,
-        red: "User",
-        required: true,
-       },
+        postedBy: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "User",
+            required: true,
+        },
     },
     {
         timestamps: true,
     }
 );
 
-const Job = mongoose.model("Job", jobSchema);
+const Job = mongoose.models.Job || mongoose.model("Job", jobSchema);
 
 export default Job;
